@@ -1,0 +1,202 @@
+:root {
+  color-scheme: light;
+  font-family: 'Segoe UI', sans-serif;
+  background: #f6f7fb;
+  color: #1f2933;
+}
+
+body {
+  margin: 0;
+}
+
+.container {
+  display: grid;
+  gap: 1.5rem;
+  padding: 2rem;
+  max-width: 1100px;
+  margin: 0 auto;
+}
+
+@media (min-width: 900px) {
+  .container {
+    grid-template-columns: 360px 1fr;
+  }
+}
+
+.panel {
+  background: #fff;
+  border-radius: 16px;
+  box-shadow: 0 25px 45px rgba(15, 23, 42, 0.08);
+  padding: 1.75rem;
+}
+
+h1, h2, h3 {
+  margin-top: 0;
+}
+
+.muted {
+  color: #64748b;
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.field {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  font-size: 0.95rem;
+}
+
+fieldset.field {
+  border: 1px solid #e2e8f0;
+  border-radius: 12px;
+  padding: 1rem;
+}
+
+fieldset label {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  margin-right: 1rem;
+}
+
+.field.nested {
+  margin-top: 1rem;
+}
+
+button[type='submit'] {
+  background: linear-gradient(135deg, #2563eb, #7c3aed);
+  color: #fff;
+  padding: 0.75rem 1rem;
+  border: 0;
+  border-radius: 10px;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+button[type='submit']:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 12px 25px rgba(79, 70, 229, 0.25);
+}
+
+#tasks-panel {
+  min-height: 240px;
+}
+
+.task {
+  border: 1px solid #e2e8f0;
+  border-radius: 12px;
+  padding: 1rem;
+  margin-bottom: 1rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.task header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.task .state {
+  font-size: 0.85rem;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: #475569;
+}
+
+.task .detail {
+  color: #64748b;
+  margin: 0;
+}
+
+.task .download {
+  align-self: flex-start;
+  background: #10b981;
+  color: #fff;
+  padding: 0.5rem 0.75rem;
+  border-radius: 8px;
+  text-decoration: none;
+  font-weight: 600;
+}
+
+.task .download:hover {
+  background: #059669;
+}
+
+/* 登录界面样式 */
+.error-message {
+  color: #ef4444;
+  font-size: 0.9rem;
+  margin-top: 0.5rem;
+  padding: 0.5rem;
+  background: #fee2e2;
+  border-radius: 6px;
+}
+
+.user-info {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1rem;
+  padding: 0.75rem;
+  background: #f1f5f9;
+  border-radius: 8px;
+}
+
+.user-info span {
+  font-weight: 600;
+  color: #475569;
+}
+
+.btn-logout {
+  background: #ef4444;
+  color: #fff;
+  padding: 0.5rem 1rem;
+  border: 0;
+  border-radius: 6px;
+  font-size: 0.9rem;
+  cursor: pointer;
+  transition: background 0.2s ease;
+}
+
+.btn-logout:hover {
+  background: #dc2626;
+}
+
+/* 文件输入组 */
+.file-input-group {
+  display: flex;
+  gap: 0.5rem;
+  align-items: center;
+}
+
+.btn-secondary {
+  background: #64748b;
+  color: #fff;
+  padding: 0.5rem 0.75rem;
+  border: 0;
+  border-radius: 6px;
+  font-size: 0.9rem;
+  cursor: pointer;
+  transition: background 0.2s ease;
+  white-space: nowrap;
+}
+
+.btn-secondary:hover {
+  background: #475569;
+}
+
+.file-count {
+  margin-top: 0.5rem;
+  font-size: 0.9rem;
+  color: #10b981;
+  font-weight: 600;
+}
+

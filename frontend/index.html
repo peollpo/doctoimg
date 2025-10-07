@@ -1,0 +1,93 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Doc → Image Converter</title>
+    <link rel="stylesheet" href="/static/styles.css" />
+  </head>
+  <body>
+    <main class="container">
+      <!-- 登录面板 -->
+      <section class="panel" id="login-panel">
+        <h1>Document to Image</h1>
+        <p class="muted">Please log in to continue</p>
+        <form id="login-form">
+          <label class="field">
+            <span>Email</span>
+            <input type="email" name="identifier" placeholder="your@email.com" required />
+          </label>
+          <label class="field">
+            <span>Password</span>
+            <input type="password" name="password" placeholder="Enter your password" required />
+          </label>
+          <button type="submit">Log In</button>
+          <p class="error-message" id="login-error" hidden></p>
+        </form>
+      </section>
+
+      <!-- 主功能面板 (登录后显示) -->
+      <section class="panel" id="main-panel" hidden>
+        <div class="user-info">
+          <span id="user-email"></span>
+          <button id="logout-btn" class="btn-logout">Log Out</button>
+        </div>
+        <h1>Document to Image</h1>
+        <p class="muted">Upload a Word or PDF file, pick a background, and we will generate page images.</p>
+        <form id="upload-form">
+          <label class="field">
+            <span>Document(s)</span>
+            <div class="file-input-group">
+              <input type="file" id="file-input" name="files" accept=".doc,.docx,.pdf" multiple />
+              <button type="button" id="folder-btn" class="btn-secondary">Or Select Folder</button>
+            </div>
+            <p class="file-count" id="file-count" hidden></p>
+          </label>
+
+          <fieldset class="field">
+            <legend>Background</legend>
+            <label><input type="radio" name="background_type" value="none" checked /> None</label>
+            <label><input type="radio" name="background_type" value="color" /> Color</label>
+            <label><input type="radio" name="background_type" value="image" /> Image</label>
+
+            <div class="field nested" id="color-picker" hidden>
+              <span>Pick a color</span>
+              <input type="color" name="background_color" value="#ffffff" />
+            </div>
+
+            <div class="field nested" id="image-picker" hidden>
+              <span>Background image</span>
+              <input type="file" name="background_image" accept="image/*" />
+            </div>
+          </fieldset>
+
+          <label class="field">
+            <span>Output DPI</span>
+            <input type="number" name="dpi" value="144" min="72" max="600" />
+          </label>
+
+          <button type="submit">Start Conversion</button>
+        </form>
+      </section>
+
+      <section class="panel" id="tasks-panel">
+        <h2>Tasks</h2>
+        <div id="tasks"></div>
+      </section>
+      </section>
+    </main>
+
+    <template id="task-template">
+      <article class="task">
+        <header>
+          <h3></h3>
+          <span class="state"></span>
+        </header>
+        <p class="detail"></p>
+        <a class="download" href="#" hidden>Download images</a>
+      </article>
+    </template>
+
+    <script type="module" src="/static/main.js"></script>
+  </body>
+</html>

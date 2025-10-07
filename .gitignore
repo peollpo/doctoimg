@@ -1,0 +1,18 @@
+# Python
+__pycache__/
+*.py[cod]
+*.pyo
+
+# Environments
+.venv/
+.env
+
+# Data outputs
+data/uploads/
+data/results/
+
+# tooling artifacts
+.spec-workflow/
+
+# macOS
+.DS_Store
